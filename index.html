@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1E2761">
+<meta name="robots" content="noindex, nofollow">
+<title>OPIM639 Exam Prep</title>
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="icon" href="icon-192.png">
+<style>
+:root{--bg:#F2F4FA;--card:#fff;--ink:#1C2230;--muted:#5D6475;--line:#E1E5EE;--chip:#EEF1F8;--brand:#1E2761;--accent:#3D6BE0;--accent2:#7B5CFA;--ok:#16956F;--okbg:#E2F5EE;--bad:#C6372E;--badbg:#FCE9E7;--warn:#B76E00;--warnbg:#FFF4DF;--shadow:0 8px 28px rgba(30,39,97,.09);--tc:#3D6BE0;--tt:#EEF1F8}
+@media (prefers-color-scheme:dark){:root{--bg:#0F1219;--card:#191E29;--ink:#E9ECF3;--muted:#A3AABA;--line:#2B3241;--chip:#242A37;--accent:#7FA2FF;--ok:#4FD1A5;--okbg:#13342B;--bad:#FF8A80;--badbg:#3A1E1C;--warn:#F2B35B;--warnbg:#382D18;--shadow:0 8px 28px rgba(0,0,0,.4);--tt:#232938}}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-text-size-adjust:100%}
+button{font:inherit;color:inherit;cursor:pointer}
+header{position:sticky;top:0;z-index:30;background:linear-gradient(120deg,#1E2761,#3B2C8F 60%,#5B3DB5);color:#fff;box-shadow:0 2px 14px rgba(0,0,0,.18)}
+header .row{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:8px;padding:10px 14px}
+header h1{font-size:18px;margin:0;flex:1;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:.2px}
+.hb{background:rgba(255,255,255,.14);border:0;border-radius:10px;padding:7px 10px;font-size:14px;color:#fff;white-space:nowrap}
+.hb:hover{background:rgba(255,255,255,.26)}
+.pbar{height:4px;background:rgba(255,255,255,.18)} .pbar i{display:block;height:100%;background:linear-gradient(90deg,#4FD1A5,#F2B35B);transition:width .5s}
+main{max-width:1100px;margin:0 auto;padding:16px 14px 110px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;margin-bottom:14px;box-shadow:var(--shadow)}
+.rise{animation:rise .35s ease both} @keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.slideL{animation:sl .3s ease both}@keyframes sl{from{opacity:0;transform:translateX(26px)}to{opacity:1;transform:none}}
+.slideR{animation:sr .3s ease both}@keyframes sr{from{opacity:0;transform:translateX(-26px)}to{opacity:1;transform:none}}
+@keyframes pop{0%{transform:scale(1)}40%{transform:scale(1.35)}100%{transform:scale(1)}}
+h2{margin:0 0 10px;font-size:19px}
+.muted{color:var(--muted);font-size:14.5px}
+.hero{background:linear-gradient(135deg,#3D6BE0,#7B5CFA);color:#fff;border:0}
+.hero .muted{color:rgba(255,255,255,.86)}
+.count{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.count div{background:rgba(255,255,255,.16);border-radius:12px;padding:8px 12px;min-width:76px;text-align:center}
+.count b{display:block;font-size:24px;line-height:1.1}
+.btn{border:0;border-radius:14px;padding:12px 16px;font-weight:650;min-height:48px;transition:transform .12s}
+.btn:active{transform:scale(.97)}
+.btn.primary{background:linear-gradient(135deg,#3D6BE0,#6A55F2);color:#fff;box-shadow:0 6px 18px rgba(61,107,224,.35)}
+.btn.ghost{background:var(--chip);border:1px solid var(--line)}
+.btn.white{background:#fff;color:#1E2761}
+.row2{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.row2 .btn{flex:1 1 150px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:var(--chip);border-radius:999px;padding:7px 13px;font-size:14.5px}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.tile{display:block;text-align:left;border:1px solid var(--line);background:var(--card);border-radius:18px;padding:14px;box-shadow:var(--shadow);transition:transform .18s,border-color .18s;position:relative;overflow:hidden}
+.tile:hover{transform:translateY(-3px);border-color:var(--tc)}
+.tile .num{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:800;float:left;margin-right:10px}
+.tile b{display:block;font-size:16px;line-height:1.25}
+.tile .muted{font-size:13px}
+.tile .bar{clear:both;height:7px;background:var(--chip);border-radius:9px;margin-top:12px;overflow:hidden}.tile .bar i{display:block;height:100%;border-radius:9px;transition:width .8s}
+.done-badge{position:absolute;top:10px;right:10px;font-size:18px}
+/* reader */
+.rtop{display:flex;align-items:center;gap:6px;margin-bottom:10px;flex-wrap:nowrap}.rtop>*{flex-shrink:0}.rtop .tpill,.rtop .chip{flex-shrink:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tpill{border-radius:999px;padding:5px 12px;font-size:13.5px;font-weight:700;color:#fff;background:var(--tc)}
+.icon{border:1px solid var(--line);background:var(--card);border-radius:12px;padding:7px 11px;font-size:15px;transition:all .15s}
+.icon.on{background:var(--warnbg);border-color:var(--warn);color:var(--warn)}
+.icon.read.on{background:var(--okbg);border-color:var(--ok);color:var(--ok)}
+.icon.pop{animation:pop .35s ease}
+.slide{background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:22px;min-height:60vh;touch-action:pan-y}
+.slide h2.st{font-size:clamp(21px,3.2vw,30px);line-height:1.25;margin:0 0 16px;font-family:Cambria,Georgia,serif}
+.slide.dark{background:linear-gradient(140deg,#1E2761,#2D2370);color:#fff;border:0}
+.slide.dark .muted{color:#CADCFC}
+ul.b{margin:6px 0;padding-left:20px} ul.b li{margin:5px 0}
+.cards{display:grid;gap:12px}
+.c{background:var(--tt);border-radius:16px;padding:14px}
+.c h3{margin:0 0 6px;font-size:16.5px;color:var(--tc)}
+.c ul{margin:0;padding-left:18px} .c li{margin:4px 0;font-size:15.5px}
+.cols2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.colh{border-radius:12px 12px 0 0;padding:10px 14px;color:#fff;font-weight:700}
+.colb{border-radius:0 0 12px 12px;padding:10px 14px 12px;background:var(--tt)}
+.key{margin-top:14px;background:var(--warnbg);border-radius:14px;padding:11px 14px;font-size:15.5px}
+.key b{color:var(--tc)}
+.tbl{overflow-x:auto;border-radius:12px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;font-size:15px;min-width:520px}
+th{background:var(--tc);color:#fff;text-align:left;padding:9px 10px;font-weight:650}
+td{padding:9px 10px;border-top:1px solid var(--line);vertical-align:top} td:first-child{font-weight:650;color:var(--tc)}
+tr:nth-child(even) td{background:var(--chip)}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;margin:8px 0}
+.flow .lab{width:100%;font-weight:700;color:var(--muted);font-size:14px;margin-top:6px}
+.step{flex:1 1 140px;background:var(--tt);border-radius:12px;padding:12px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:15px;position:relative}
+.step.hi{background:var(--tc);color:#fff;font-weight:700}
+.arrow{align-self:center;color:var(--muted);font-weight:800}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-bottom:12px}
+.stat{background:var(--tt);border-radius:16px;padding:14px;text-align:center}
+.stat b{display:block;font-size:clamp(26px,4vw,40px);color:var(--tc);font-family:Cambria,Georgia,serif;line-height:1.1}
+.stat span{font-size:13.5px}
+.trap{background:var(--badbg);border-radius:12px;padding:10px 12px;margin:7px 0;font-size:15.5px}
+.ask{background:var(--tt);border-radius:12px;padding:10px 12px;margin:7px 0;font-size:15.5px}.ask b{color:var(--tc);display:block}
+.recap li{list-style:none;display:flex;gap:12px;align-items:center;margin:12px 0;font-size:18px}
+.recap{padding:0;margin:0}
+.recap .n{flex:none;width:36px;height:36px;border-radius:50%;background:var(--tc);display:grid;place-items:center;font-weight:800}
+.mx{display:grid;grid-template-columns:auto 1fr 1fr;gap:8px;align-items:stretch}
+.mx .h{font-weight:700;color:var(--muted);text-align:center;font-size:14px;align-self:end}
+.mx .v{font-weight:700;color:var(--muted);font-size:14px;align-self:center;text-align:right;padding-right:4px}
+.q{border-radius:14px;padding:14px;text-align:center;background:var(--tt);display:flex;flex-direction:column;justify-content:center;min-height:110px}
+.q.s{background:var(--tc);color:#fff}.q b{font-size:16.5px}.q span{font-size:14px;opacity:.9}
+.figs{display:grid;gap:14px}
+figure{margin:0}
+figure img{width:100%;border-radius:12px;border:1px solid var(--line);cursor:zoom-in;display:block;background:#fff;transition:transform .2s}
+figure img:hover{transform:scale(1.01)}
+figcaption{font-size:14.5px;margin-top:6px;font-weight:650;color:var(--tc)}
+figcaption small{display:block;font-weight:400;color:var(--muted);font-style:italic;font-size:12px}
+.side{display:grid;grid-template-columns:1.4fr 1fr;gap:16px;align-items:start}
+.qa{display:grid;gap:12px}
+.qa .qq{background:var(--tc);color:#fff;border-radius:12px 12px 0 0;padding:10px 12px;font-weight:700;font-size:15.5px}
+.qa .aa{background:var(--tt);border-radius:0 0 12px 12px;padding:8px 12px 10px}
+.bb{display:flex;height:56px;border-radius:10px;overflow:hidden;margin:6px 0}
+.bb div{display:grid;place-items:center;color:#fff;font-weight:700;font-size:14px}
+.dots{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.dots i{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-weight:800;font-size:13px;background:#3A4378;color:#fff}
+.dots i.cur{outline:3px solid #fff}
+.t20{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:6px}
+.t20 div{display:flex;gap:8px;align-items:center;font-size:15px}.t20 .n{flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:12px;font-weight:800}
+details.notes{margin-top:16px;background:var(--chip);border-radius:14px;padding:10px 14px}
+details.notes summary{cursor:pointer;font-weight:650}
+details.notes p{margin:8px 0 2px;font-size:15px}
+textarea{width:100%;min-height:70px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:9px 12px;font:inherit;font-size:15px;margin-top:8px}
+.navbar{position:fixed;left:0;right:0;bottom:0;z-index:25;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:8px 12px calc(8px + env(safe-area-inset-bottom))}
+@media (prefers-color-scheme:dark){.navbar{background:rgba(20,24,33,.92)}}
+.navbar .in{max-width:1100px;margin:0 auto;display:flex;gap:8px;align-items:center}
+.navbar .btn{min-height:46px;padding:10px 14px}
+.navbar .mid{flex:1;text-align:center;font-size:13.5px;color:var(--muted)}
+.navbar .mid .tb{height:6px;background:var(--chip);border-radius:9px;margin-top:4px;overflow:hidden}.navbar .mid .tb i{display:block;height:100%;background:var(--tc)}
+.list .it{display:flex;gap:10px;align-items:center;padding:11px 4px;border-top:1px solid var(--line);cursor:pointer}
+.list .it:hover{background:var(--chip)}
+.list .it .d{width:12px;height:12px;border-radius:50%;flex:none;border:2px solid var(--tc)}
+.list .it .d.r{background:var(--tc)}
+.list .it span.t{flex:1}
+input[type=search]{width:100%;border-radius:14px;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:12px 14px;font:inherit}
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:60;display:flex;align-items:center;justify-content:center;padding:10px;animation:rise .2s ease}
+.lb img{max-width:100%;max-height:100%;border-radius:8px;touch-action:pinch-zoom}
+.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%) translateY(20px);background:#1E2761;color:#fff;padding:10px 16px;border-radius:12px;opacity:0;transition:all .3s;z-index:70;font-size:15px;max-width:90vw;text-align:center}
+.toast.show{opacity:1;transform:translateX(-50%)}
+#qr{background:#fff;padding:12px;border-radius:12px;display:inline-block;margin-top:10px}
+.code{font-family:ui-monospace,Menlo,Consolas,monospace;word-break:break-all;background:var(--chip);border-radius:10px;padding:10px;font-size:13px}
+#fx{position:fixed;inset:0;pointer-events:none;z-index:50}
+@media (max-width:760px){.flow{flex-direction:column}.flow .step{flex-basis:auto}.flow .arrow{transform:rotate(90deg);align-self:center;line-height:1}.cols2,.side{grid-template-columns:1fr}.slide{padding:16px;border-radius:18px}.recap li{font-size:16px}.hide-sm{display:none}}
+@media print{header,.navbar,.rtop,details.notes{display:none!important}.slide{box-shadow:none;border:0;min-height:0}}
+</style>
+</head>
+<body>
+<header>
+ <div class="row"><h1 id="brand">📘 OPIM639 Exam Prep</h1>
+  <button class="hb" id="bSearch" title="Search">🔍</button><button class="hb" id="bStar" title="Starred">⭐ <span id="nStar">0</span></button><button class="hb" id="bSync" title="Sync devices">🔄<span class="hide-sm"> Sync</span></button></div>
+ <div class="pbar"><i id="gbar" style="width:0"></i></div>
+</header>
+<main id="app"><div class="card">Loading slides…</div></main>
+<div class="navbar" id="nav" hidden><div class="in"><button class="btn ghost" id="prev">◀<span class="hide-sm"> Prev</span></button><div class="mid" id="nmid"></div><button class="btn primary" id="next"><span class="hide-sm">Next </span>▶</button></div></div>
+<canvas id="fx"></canvas>
+<div class="toast" id="toast"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+<script>
+"use strict";
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const ls = { get(k, d) { try { const v = localStorage.getItem("opimx:" + k); return v ? JSON.parse(v) : d; } catch (e) { return d; } }, set(k, v) { try { localStorage.setItem("opimx:" + k, JSON.stringify(v)); } catch (e) {} } };
+let D = null, SL = [], cur = 0, view = "home", filter = null;
+const NAVY = "#1E2761";
+
+/* ----- state ----- */
+const readSet = () => new Set(ls.get("read", []));
+const starSet = () => new Set(ls.get("star", []));
+function setRead(id, on) { const s = readSet(); on ? s.add(id) : s.delete(id); ls.set("read", [...s]); ls.set("t", Date.now()); hdr(); }
+function setStar(id, on) { const s = starSet(); on ? s.add(id) : s.delete(id); ls.set("star", [...s]); ls.set("t", Date.now()); hdr(); }
+function hdr() { const r = readSet(); $("#gbar").style.width = (SL.length ? r.size / SL.length * 100 : 0) + "%"; $("#nStar").textContent = starSet().size; }
+function toast(m) { const t = $("#toast"); t.textContent = m; t.classList.add("show"); clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove("show"), 2300); }
+
+/* ----- confetti ----- */
+const cv = $("#fx"), cx = cv.getContext("2d"); let P = [];
+function fit() { cv.width = innerWidth * devicePixelRatio; cv.height = innerHeight * devicePixelRatio; } addEventListener("resize", fit); fit();
+function confetti(n = 120) { if (matchMedia("(prefers-reduced-motion: reduce)").matches) return; const cs = ["#3D6BE0", "#7B5CFA", "#16956F", "#F2B35B", "#FF6F91"]; for (let i = 0; i < n; i++) P.push({ x: cv.width / 2, y: cv.height * .35, vx: (Math.random() - .5) * 15 * devicePixelRatio, vy: (Math.random() * -12 - 4) * devicePixelRatio, s: (4 + Math.random() * 6) * devicePixelRatio, c: cs[i % 5], r: 0, l: 110 }); if (P.length === n) requestAnimationFrame(tk); }
+function tk() { cx.clearRect(0, 0, cv.width, cv.height); P = P.filter(p => p.l-- > 0); P.forEach(p => { p.vy += .35 * devicePixelRatio; p.x += p.vx; p.y += p.vy; p.r += .1; cx.save(); cx.translate(p.x, p.y); cx.rotate(p.r); cx.fillStyle = p.c; cx.fillRect(-p.s / 2, -p.s / 3, p.s, p.s * .6); cx.restore(); }); if (P.length) requestAnimationFrame(tk); else cx.clearRect(0, 0, cv.width, cv.height); }
+
+/* ----- boot ----- */
+fetch("slides.json").then(r => r.json()).then(d => {
+  D = d; SL = d.slides; hdr();
+  const m = location.hash.match(/sync=([\w-]+)/); if (m) { importCode(m[1]); history.replaceState(null, "", location.pathname); }
+  route();
+}).catch(() => { $("#app").innerHTML = '<div class="card"><h2>Could not load slides</h2><p class="muted">Open this site through its web link (Vercel), not as a file on your disk.</p></div>'; });
+addEventListener("hashchange", route);
+function route() { const m = location.hash.match(/^#s\/(.+)$/); if (m) { const i = SL.findIndex(s => s.id === decodeURIComponent(m[1])); if (i >= 0) return openSlide(i, 0); } home(); }
+$("#brand").onclick = () => { location.hash = ""; home(); };
+$("#bStar").onclick = () => listView("star");
+$("#bSearch").onclick = () => listView("search");
+$("#bSync").onclick = syncView;
+
+/* ----- home ----- */
+const topicOf = s => s.topic ? D.topics[s.topic] : null;
+const tcol = s => (topicOf(s) || { color: "1E2761" }).color;
+function home() {
+  view = "home"; $("#nav").hidden = true; filter = null;
+  const r = readSet(), st = starSet(), last = ls.get("last", null), li = last ? SL.findIndex(s => s.id === last) : -1;
+  const ms = Math.max(0, new Date(D.exam) - Date.now()), days = Math.floor(ms / 864e5), hrs = Math.floor(ms % 864e5 / 36e5);
+  const groups = [["intro", "Start here", "1E2761", SL.filter(s => !s.topic && SL.indexOf(s) < 3)]].concat(Object.entries(D.topics).map(([k, t]) => [k, `T${t.n} · ${t.name}`, t.color, SL.filter(s => s.topic === k)]))
+    .concat([["wrap", "Wrap-up · formulas · exam day", "8A5A00", SL.filter(s => !s.topic && SL.indexOf(s) >= 3)]]);
+  const pct = Math.round(r.size / SL.length * 100);
+  $("#app").innerHTML = `<div class="card hero rise"><h2 style="font-size:23px">Revise smart, score high 🎯</h2>
+   <div class="muted">Prof Lim's 9 topics, original slide figures, discussion answers, group work and readings: ${SL.length} slides in plain English.</div>
+   <div class="count"><div><b>${pct}%</b>revised</div><div><b>${r.size}</b>of ${SL.length} slides</div><div><b>${st.size}⭐</b>starred</div><div><b>${days}d ${hrs}h</b>to exam</div></div>
+   <div class="row2">${li >= 0 ? `<button class="btn white" id="cont">▶ Continue: ${esc((SL[li].title || SL[li].purpose || "").slice(0, 38))}</button>` : `<button class="btn white" id="cont">▶ Start revising</button>`}
+   <button class="btn ghost" id="nextUn" style="background:rgba(255,255,255,.16);color:#fff;border:0">⏭ Next unrevised</button></div></div>
+   <div class="card rise"><div class="chips"><button class="chip" id="vStar">⭐ Starred (${st.size})</button><button class="chip" id="vUn">○ Not yet revised (${SL.length - r.size})</button><button class="chip" id="vTraps">⚠️ All exam traps</button><button class="chip" id="vRecap">⚡ 60-second recaps</button><button class="chip" id="vFig">🖼 Prof Lim's figures</button></div></div>
+   <div class="tgrid">${groups.map(([k, name, col, ss], gi) => { const done = ss.filter(s => r.has(s.id)).length, sc = ss.filter(s => st.has(s.id)).length, p = ss.length ? done / ss.length : 0;
+     return `<button class="tile rise" style="--tc:#${col};animation-delay:${gi * 40}ms" data-g="${k}">${p === 1 ? '<span class="done-badge">✅</span>' : ""}<span class="num" style="background:#${col}">${k.startsWith("T") ? k.slice(1) : k === "intro" ? "★" : "✓"}</span><b>${esc(name)}</b><span class="muted">${done}/${ss.length} revised${sc ? ` · ${sc}⭐` : ""}</span><div class="bar"><i style="width:${p * 100}%;background:#${col}"></i></div></button>`; }).join("")}</div>
+   <div class="card rise" style="margin-top:14px"><h2>How to use</h2><ul class="b muted"><li><b>Swipe</b> left/right on your phone, or use ← → keys on a laptop.</li><li>Each slide you move past is marked <b>revised ✓</b>; tap ✓ to undo. Tap <b>☆</b> to star slides to revisit.</li><li>Tap any Prof Lim figure to zoom. Open <b>“Class notes & detail”</b> under each slide for more.</li><li>Use <b>🔄 Sync</b> to carry your progress between phone and laptop.</li></ul></div>`;
+  const firstIn = arr => SL.indexOf(arr.find(s => !r.has(s.id)) || arr[0]);
+  $$("[data-g]").forEach(b => b.onclick = () => { const g = groups.find(x => x[0] === b.dataset.g)[3]; filter = null; openSlide(firstIn(g), 0); });
+  $("#cont").onclick = () => openSlide(li >= 0 ? li : 0, 0);
+  $("#nextUn").onclick = () => { const i = SL.findIndex(s => !r.has(s.id)); if (i < 0) { confetti(); toast("Everything revised! 🎉 Review your starred slides."); } else openSlide(i, 0); };
+  $("#vStar").onclick = () => listView("star"); $("#vUn").onclick = () => listView("unread");
+  $("#vTraps").onclick = () => setFilter(s => s.type === "traps", "Exam traps");
+  $("#vRecap").onclick = () => setFilter(s => s.type === "recap", "60-second recaps");
+  $("#vFig").onclick = () => setFilter(s => /^orig/.test(s.type), "Prof Lim's figures");
+  scrollTo(0, 0);
+}
+function setFilter(fn, name) { const idx = SL.map((s, i) => fn(s) ? i : -1).filter(i => i >= 0); if (!idx.length) return toast("Nothing here yet"); filter = { idx, name }; openSlide(idx[0], 0); }
+
+/* ----- lists: starred / unread / search ----- */
+function listView(kind) {
+  view = "list"; $("#nav").hidden = true; const r = readSet(), st = starSet();
+  const title = { star: "⭐ Starred slides", unread: "○ Not yet revised", search: "🔍 Search all slides" }[kind];
+  $("#app").innerHTML = `<div class="card rise"><h2>${title}</h2>${kind === "search" ? '<input type="search" id="q" placeholder="e.g. bucket brigade, showrooming, Webvan, 112.5" autofocus>' : ""}
+   ${kind === "star" ? `<div class="row2"><button class="btn primary" id="playStar">▶ Go through starred slides</button></div>` : ""}<div class="list" id="lst" style="margin-top:10px"></div></div>`;
+  const draw = q => {
+    let arr = SL.map((s, i) => [s, i]);
+    if (kind === "star") arr = arr.filter(([s]) => st.has(s.id)); if (kind === "unread") arr = arr.filter(([s]) => !r.has(s.id));
+    if (q) { q = q.toLowerCase(); arr = arr.filter(([s]) => JSON.stringify(s).toLowerCase().includes(q)); }
+    $("#lst").innerHTML = arr.length ? arr.map(([s, i]) => `<div class="it" data-i="${i}" style="--tc:#${tcol(s)}"><span class="d ${r.has(s.id) ? "r" : ""}"></span><span class="t">${esc(s.title || (topicOf(s) ? topicOf(s).name : "") + " (divider)")}</span><span class="muted">${s.topic || ""}${st.has(s.id) ? " ⭐" : ""}</span></div>`).join("") : `<p class="muted">${kind === "star" ? "Tap ☆ on any slide to star it." : kind === "search" ? (q ? "No matches." : "Type to search titles, notes and answers.") : "All revised! 🎉"}</p>`;
+    $$("#lst .it").forEach(e => e.onclick = () => { filter = kind === "search" ? null : { idx: arr.map(x => x[1]), name: title }; openSlide(+e.dataset.i, 0); });
+  };
+  draw(""); if ($("#q")) { $("#q").oninput = e => draw(e.target.value.trim()); setTimeout(() => $("#q").focus(), 50); }
+  if ($("#playStar")) $("#playStar").onclick = () => setFilter(s => st.has(s.id), "Starred");
+  scrollTo(0, 0);
+}
+
+/* ----- reader ----- */
+let enteredAt = 0;
+function openSlide(i, dir) {
+  if (i < 0 || i >= SL.length) return;
+  view = "read"; cur = i; const s = SL[i]; enteredAt = Date.now(); ls.set("last", s.id);
+  if (location.hash !== "#s/" + encodeURIComponent(s.id)) history.replaceState(null, "", "#s/" + encodeURIComponent(s.id));
+  const r = readSet(), st = starSet(), col = "#" + tcol(s), t = topicOf(s);
+  document.documentElement.style.setProperty("--tc", col);
+  const tint = t ? t.tint : "EEF1F8";
+  const inTopic = SL.filter(x => x.topic === s.topic), pos = inTopic.indexOf(s) + 1;
+  const myNote = (ls.get("notes", {}))[s.id] || "";
+  $("#app").innerHTML = `<div class="rtop">${t ? `<span class="tpill">T${t.n} · ${esc(t.name)}</span>` : `<span class="tpill" style="background:${NAVY}">OPIM639</span>`}
+    ${filter ? `<span class="chip">${esc(filter.name)} · ${filter.idx.indexOf(i) + 1}/${filter.idx.length} <a href="#" id="clr" style="margin-left:6px">✕</a></span>` : ""}<span style="flex:1"></span>
+    <button class="icon read ${r.has(s.id) ? "on" : ""}" id="tRead" title="Mark revised">${r.has(s.id) ? "✓ Revised" : "○ Revised?"}</button>
+    <button class="icon ${st.has(s.id) ? "on" : ""}" id="tStar" title="Star (S)">${st.has(s.id) ? "★" : "☆"}</button>
+    <button class="icon" id="tHome" title="Contents">☰</button></div>
+   <div class="slide ${dir > 0 ? "slideL" : dir < 0 ? "slideR" : "rise"} ${["divider", "recap", "title"].includes(s.type) ? "dark" : ""}" id="sl" style="--tt:${matchMedia("(prefers-color-scheme: dark)").matches ? "var(--chip)" : "#" + tint}">${renderSlide(s)}</div>
+   <details class="notes" ${ls.get("openNotes", false) ? "open" : ""}><summary>📝 Class notes & detail</summary>${s.notes ? `<p>${esc(s.notes)}</p>` : '<p class="muted">No extra notes for this slide.</p>'}
+    <p style="margin-top:12px"><b>My note</b> <span class="muted">(saved on this device)</span></p><textarea id="myn" placeholder="Add a memory hook, a question to ask, or a link to another topic…">${esc(myNote)}</textarea></details>`;
+  const n = filter ? filter.idx : null, fpos = n ? n.indexOf(i) : -1;
+  $("#nav").hidden = false;
+  $("#nmid").innerHTML = `${t ? `T${t.n} · slide ${pos}/${inTopic.length}` : "OPIM639"} · ${i + 1}/${SL.length}<div class="tb"><i style="width:${(i + 1) / SL.length * 100}%"></i></div>`;
+  $("#prev").disabled = n ? fpos <= 0 : i === 0;
+  $("#next").innerHTML = (n ? fpos >= n.length - 1 : i === SL.length - 1) ? "Finish 🏁" : '<span class="hide-sm">Next </span>▶';
+  $("#tRead").onclick = () => { const on = !readSet().has(s.id); setRead(s.id, on); const b = $("#tRead"); b.classList.toggle("on", on); b.textContent = on ? "✓ Revised" : "○ Revised?"; b.classList.add("pop"); };
+  $("#tStar").onclick = () => { const on = !starSet().has(s.id); setStar(s.id, on); const b = $("#tStar"); b.classList.toggle("on", on); b.textContent = on ? "★" : "☆"; b.classList.remove("pop"); void b.offsetWidth; b.classList.add("pop"); toast(on ? "Starred to revisit ⭐" : "Removed star"); };
+  $("#tHome").onclick = () => { location.hash = ""; home(); };
+  if ($("#clr")) $("#clr").onclick = e => { e.preventDefault(); filter = null; openSlide(i, 0); };
+  $("details.notes").ontoggle = e => ls.set("openNotes", e.target.open);
+  $("#myn").oninput = e => { const m = ls.get("notes", {}); m[s.id] = e.target.value; ls.set("notes", m); };
+  $$("#sl figure img").forEach(im => im.onclick = () => zoom(im.src));
+  bindSwipe($("#sl"));
+  scrollTo(0, 0);
+}
+function step(d) {
+  if (view !== "read") return;
+  const s = SL[cur]; if (d > 0 && !readSet().has(s.id)) { setRead(s.id, true); celebrate(s); }
+  if (filter) { const p = filter.idx.indexOf(cur) + d; if (p < 0) return; if (p >= filter.idx.length) { toast(`Finished: ${filter.name} ✅`); filter = null; return home(); } return openSlide(filter.idx[p], d); }
+  const j = cur + d; if (j >= SL.length) { confetti(); toast("You reached the end! 🎉"); return home(); } openSlide(j, d);
+}
+function celebrate(s) {
+  const r = readSet(); if (s.topic) { const all = SL.filter(x => x.topic === s.topic); if (all.every(x => r.has(x.id))) { confetti(140); toast(`Topic ${D.topics[s.topic].n} fully revised! 🏆`); } }
+  if (r.size === SL.length) { confetti(220); toast("ALL slides revised. You're exam-ready! 🎓"); }
+}
+$("#prev").onclick = () => step(-1); $("#next").onclick = () => step(1);
+addEventListener("keydown", e => {
+  if (view !== "read" || /INPUT|TEXTAREA/.test(document.activeElement.tagName) || $(".lb")) { if ($(".lb") && e.key === "Escape") $(".lb").remove(); return; }
+  if (e.key === "ArrowRight" || e.key === " ") { e.preventDefault(); step(1); } else if (e.key === "ArrowLeft") step(-1); else if (e.key.toLowerCase() === "s") $("#tStar").click(); else if (e.key === "Escape") { location.hash = ""; home(); }
+});
+function bindSwipe(el) { let x0 = null, y0 = 0; el.addEventListener("touchstart", e => { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true }); el.addEventListener("touchend", e => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0; if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) step(dx < 0 ? 1 : -1); x0 = null; }, { passive: true }); }
+function zoom(src) { const d = document.createElement("div"); d.className = "lb"; d.innerHTML = `<img src="${src}" alt="Zoomed figure">`; d.onclick = () => d.remove(); document.body.appendChild(d); }
+
+/* ----- slide renderers ----- */
+const ul = a => `<ul class="b">${a.map(x => `<li>${esc(x)}</li>`).join("")}</ul>`;
+const key = s => s.takeaway ? `<div class="key"><b>Key point</b> ${esc(s.takeaway)}</div>` : "";
+const srcOf = id => { const [d, k] = id.split("-"); return `Prof Lim · slides${d.slice(1)} · slide ${+k}`; };
+const fig = (id, cap) => `<figure><img loading="lazy" src="img/${id}.jpg" alt="${esc(cap || srcOf(id))}"><figcaption>${esc(cap || "")}<small>${srcOf(id)}</small></figcaption></figure>`;
+const H = s => s.title ? `<h2 class="st">${esc(s.title)}</h2>` : "";
+const R = {
+  title: s => `<div style="padding:4vh 0"><div class="muted" style="font-size:15px">Revision deck v3</div><h2 class="st" style="font-size:clamp(30px,6vw,52px)">${esc(s.title)}</h2><p style="font-size:18px">${esc(s.sub)}</p><p class="muted">${esc(s.line)}</p>
+    <div class="dots">${Object.values(D.topics).map(t => `<i style="background:#${t.color}">${t.n}</i>`).join("")}</div></div>`,
+  bigpicture: s => { const q = { T1: "WHY online?", T2: "WHERE to sell?", T3: "WHAT price?", T4: "PLAN the chain", T5: "CHOOSE the kit", T6: "PICK the order", T7: "DELIVER it", T8: "PLATFORM effects", T9: "BLEND channels" };
+    return H(s) + `<div class="flow">${Object.entries(D.topics).map(([k, t], i) => `<div class="step hi" style="background:#${t.color}"><div><b>T${t.n} · ${q[k]}</b><br><span style="font-weight:400">${esc(t.name)}</span></div></div>${i < 8 ? '<span class="arrow">→</span>' : ""}`).join("")}</div>
+    <div class="key"><b>Goal of every topic</b> Revenue ↑ · Cost ↓ · Service level ↑. Online saves store costs but moves cost into picking (~55% of warehouse cost) and the last mile (up to 28% of delivery cost).</div>`; },
+  stats: s => H(s) + `<div class="stats">${s.stats.map(([b, l]) => `<div class="stat"><b>${esc(b)}</b><span>${esc(l)}</span></div>`).join("")}</div>${s.body ? ul(s.body) : ""}${key(s)}`,
+  divider: s => { const t = topicOf(s); return `<div style="padding:5vh 0">${t ? `<div style="width:84px;height:84px;border-radius:50%;background:#${t.color};display:grid;place-items:center;font-size:44px;font-weight:800;margin-bottom:14px">${t.n}</div>` : ""}<h2 class="st" style="font-size:clamp(30px,5vw,46px)">${esc(t ? t.name : s.title)}</h2><p style="font-size:19px" class="muted">${esc(s.purpose)}</p>
+    <p class="muted" style="margin-top:6vh">Where we are</p><div class="dots">${Object.entries(D.topics).map(([k, v]) => `<i class="${k === s.topic ? "cur" : ""}" style="${k === s.topic ? "background:#" + v.color : ""}">${v.n}</i>`).join("")}</div></div>`; },
+  cards: s => H(s) + `<div class="cards" style="grid-template-columns:repeat(auto-fit,minmax(${s.cols >= 4 ? 170 : 220}px,1fr))">${s.cards.map(c => `<div class="c"><h3>${esc(c.h)}</h3>${c.t.length ? `<ul>${c.t.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}</div>`).join("")}</div>${key(s)}`,
+  compare: s => H(s) + `<div class="cols2"><div><div class="colh" style="background:var(--tc)">${esc(s.left.h)}</div><div class="colb">${ul(s.left.t)}</div></div><div><div class="colh" style="background:${NAVY}">${esc(s.right.h)}</div><div class="colb">${ul(s.right.t)}</div></div></div>${key(s)}`,
+  table: s => H(s) + `<div class="tbl"><table><tr>${s.head.map(h => `<th>${esc(h)}</th>`).join("")}</tr>${s.rows.map(r => `<tr>${r.map(c => `<td>${esc(c)}</td>`).join("")}</tr>`).join("")}</table></div>${key(s)}`,
+  flow: s => H(s) + s.rows.map(r => `<div class="flow"><div class="lab">${esc(r.label)}</div>${r.steps.map((x, i) => `<div class="step ${i === r.hi ? "hi" : ""}">${esc(x)}</div>${i < r.steps.length - 1 ? '<span class="arrow">→</span>' : ""}`).join("")}</div>`).join("") + `<div class="key">${esc(s.caption)}</div>`,
+  traps: s => H(s) + `<div class="cols2"><div><h3 style="color:var(--bad);margin:0 0 6px">⚠️ Exam traps</h3>${s.traps.map(x => `<div class="trap">${esc(x)}</div>`).join("")}</div><div><h3 style="color:var(--tc);margin:0 0 6px">If asked… → say…</h3>${s.asks.map(([q, a]) => `<div class="ask"><b>${esc(q)}</b>→ ${esc(a)}</div>`).join("")}</div></div>`,
+  recap: s => H(s) + `<ul class="recap">${s.points.map((p, i) => `<li><span class="n">${i + 1}</span>${esc(p)}</li>`).join("")}</ul>`,
+  equipment: s => H(s) + `<div class="tbl"><table><tr><th>Unit</th><th>STORE it on…</th><th>MOVE it with…</th></tr>
+    <tr><td>PALLET</td><td>Single-deep (selective) racks</td><td>Counterbalance lift truck · Turret truck (very narrow aisles) · AS/RS · Conveyors</td></tr>
+    <tr><td>CASE</td><td>Pallet flow racks (tilted; restock from a different aisle)</td><td>Order-picker trucks · AS/RS · Conveyors · Boston Dynamics robots</td></tr>
+    <tr><td>PIECE</td><td>Bin-shelving → SLOW movers<br>Gravity flow racks → FAST movers</td><td>AS/RS (bins) · Kiva (shelf pods) · AutoStore (bins from a cube grid)</td></tr></table></div>
+    <div class="key"><b>Hooks</b> 'Bin = bad for busy items' · 'Gravity = go fast'. Difficulty and cost per unit rise from pallet → piece.</div>`,
+  bucket: s => H(s) + `<div class="key" style="margin-top:0"><b>Rule</b> carry your job FORWARD until the next worker takes it over, then WALK BACK and take over the job behind you.</div>
+    <p class="muted" style="margin:14px 0 0">Example: speeds 1, 2, 3 (slowest → fastest)</p><div class="bb"><div style="flex:1;background:#D06A00">W1</div><div style="flex:2;background:#2E5BBA">Worker 2</div><div style="flex:3;background:#1F8A70">Worker 3</div></div>
+    <div style="display:flex;justify-content:space-between" class="muted"><span>0</span><span>1/6</span><span>1/2</span><span>1</span></div>
+    <div class="cards" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:12px"><div class="c"><h3>Order</h3>Slowest → fastest along the flow → hand-offs settle at fixed points (self-balancing)</div><div class="c"><h3>Worker i repeats</h3>[(v₁+…+vᵢ₋₁)/Σv , (v₁+…+vᵢ)/Σv] · e.g. worker 2 = [1/6, 1/2]</div><div class="c"><h3>Throughput</h3>TH = v₁ + v₂ + … = 1 + 2 + 3 = 6 (max possible)</div></div>`,
+  matrix2: s => { const st = s.strong || [1, 2]; return H(s) + `<div class="mx"><span></span><span class="h">${esc(s.xlab[0])}</span><span class="h">${esc(s.xlab[1])}</span>
+    ${[0, 1].map(r => `<span class="v">${esc(s.ylab[r])}</span>${[0, 1].map(c => { const i = r * 2 + c, [h, b] = s.quads[i]; return `<div class="q ${st.includes(i) ? "s" : ""}"><b>${esc(h)}</b><span>${esc(b)}</span></div>`; }).join("")}`).join("")}</div>${key(s)}`; },
+  chart_price: s => H(s) + `<div class="side"><figure><img src="img/price_opt.jpg" alt="Revenue curve with constraints"><figcaption>Revenue X·(70.507 − 0.6066X) vs price</figcaption></figure><div class="cards">
+    <div class="c"><h3>1 · Unconstrained best</h3>X⁰ = −a/(2b) = 70.507/(2×0.6066) = 58.12 (R ≈ 2,049)</div><div class="c"><h3>2 · Margin floor</h3>(X − 75)/75 ≥ 50% → X ≥ 112.5</div><div class="c"><h3>3 · Competitor cap</h3>X ≤ 134.99 (not binding)</div><div class="c" style="background:var(--tc);color:#fff"><h3 style="color:#fff">4 · Answer</h3>Revenue falls after 58.12, so take the LOWEST allowed price: X* = 112.5 (R ≈ 255)</div></div></div>`,
+  chart_network: s => H(s) + `<div class="side"><figure><img src="img/network_hump.jpg" alt="Network effects curve"><figcaption>z(1 − z) against price lines 0.16 and 0.09</figcaption></figure><div class="cards">
+    <div class="c"><h3>z = 0</h3>Always an equilibrium (f(0) = 0); stable</div><div class="c"><h3>z′ (small root)</h3>UNSTABLE tipping point: below it users leave → 0</div><div class="c"><h3>z″ (large root)</h3>STABLE: between z′ and z″ users join → z″</div><div class="c" style="background:var(--tc);color:#fff"><h3 style="color:#fff">Solve z² − z + p = 0</h3>z = [1 ± √(1 − 4p)]/2 · p 0.16 → 0.2, 0.8 · p 0.09 → 0.1, 0.9</div></div></div>`,
+  top20: s => { const tk = [0, 0, 1, 1, 1, 2, 2, 2, 3, 3, 4, 4, 5, 5, 5, 6, 6, 7, 7, 8], ts = Object.values(D.topics); return H(s) + `<div class="t20">${s.items.map((x, i) => `<div><span class="n" style="background:#${ts[tk[i]].color}">${i + 1}</span>${esc(x)}</div>`).join("")}</div>`; },
+  orig: s => H(s) + `<div class="side">${fig(s.img, "")}<div class="c"><h3>What to take from it</h3>${ul(s.points)}</div></div>`,
+  orig2: s => H(s) + `<div class="figs" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">${s.imgs.map(([id, c]) => fig(id, c)).join("")}</div>${key(s)}`,
+  orig4: s => H(s) + `<div class="figs" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">${s.imgs.map(([id, c]) => fig(id, c)).join("")}</div>${key(s)}`,
+  qa: s => H(s) + `<div class="qa" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">${s.items.map(it => `<div><div class="qq">Q: ${esc(it.q)}</div><div class="aa">${ul(it.a)}</div></div>`).join("")}</div>${key(s)}`
+};
+R.matrix = R.compare;
+function renderSlide(s) { try { return (R[s.type] || (x => H(x)))(s); } catch (e) { return H(s) + '<p class="muted">This slide could not be shown.</p>'; } }
+
+/* ----- sync between devices (no server: a short code / link / QR) ----- */
+function bits(set) { const b = new Uint8Array(Math.ceil(SL.length / 8)); SL.forEach((s, i) => { if (set.has(s.id)) b[i >> 3] |= 1 << (i & 7); }); return b; }
+const b64 = u => btoa(String.fromCharCode(...u)).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+const unb64 = s => Uint8Array.from(atob(s.replace(/-/g, "+").replace(/_/g, "/")), c => c.charCodeAt(0));
+function exportCode() { const n = Math.ceil(SL.length / 8), a = bits(readSet()), b = bits(starSet()), u = new Uint8Array(1 + 2 * n); u[0] = 1; u.set(a, 1); u.set(b, 1 + n); return b64(u); }
+function importCode(code) {
+  try { const u = unb64(code.trim()), n = Math.ceil(SL.length / 8); if (u[0] !== 1 || u.length !== 1 + 2 * n) throw 0;
+    const r = readSet(), st = starSet(); let add = 0; SL.forEach((s, i) => { if (u[1 + (i >> 3)] >> (i & 7) & 1 && !r.has(s.id)) { r.add(s.id); add++; } if (u[1 + n + (i >> 3)] >> (i & 7) & 1 && !st.has(s.id)) { st.add(s.id); add++; } });
+    ls.set("read", [...r]); ls.set("star", [...st]); hdr(); toast(`Synced ✅ (${add} updates merged)`); confetti(60); return true;
+  } catch (e) { toast("That sync code didn't work"); return false; }
+}
+function syncView() {
+  view = "sync"; $("#nav").hidden = true;
+  const code = exportCode(), link = location.origin + location.pathname + "#sync=" + code;
+  $("#app").innerHTML = `<div class="card hero rise"><h2>🔄 Sync phone ⇄ laptop</h2><div class="muted">Your progress is saved in this browser. To carry it to another device, open this link (or scan the QR) there. Progress from both devices is MERGED; nothing is lost.</div></div>
+   <div class="card rise"><h2>Send from this device</h2><div style="text-align:center"><div id="qr"></div></div><p class="muted">Scan with your phone camera, or copy the link:</p><div class="code" id="lnk">${esc(link)}</div>
+    <div class="row2"><button class="btn primary" id="cp">📋 Copy link</button>${navigator.share ? '<button class="btn ghost" id="sh">📤 Share…</button>' : ""}</div></div>
+   <div class="card rise"><h2>Receive on this device</h2><p class="muted">Paste a link or code from your other device.</p><input type="search" id="inp" placeholder="Paste sync link or code"><div class="row2"><button class="btn primary" id="imp">⬇️ Merge progress</button></div></div>
+   <div class="card rise"><h2>Reset</h2><p class="muted">Clear revised marks and stars on this device.</p><button class="btn ghost" id="rst">Reset this device</button></div>`;
+  const tryQR = () => { if (window.QRCode) { new QRCode($("#qr"), { text: link, width: 220, height: 220, correctLevel: QRCode.CorrectLevel.L }); } else $("#qr").outerHTML = '<p class="muted">(QR needs internet; use the link instead.)</p>'; };
+  window.QRCode ? tryQR() : setTimeout(tryQR, 800);
+  $("#cp").onclick = () => { navigator.clipboard.writeText(link).then(() => toast("Link copied 📋"), () => toast("Select and copy the link above")); };
+  if ($("#sh")) $("#sh").onclick = () => navigator.share({ title: "OPIM639 Exam Prep progress", url: link }).catch(() => {});
+  $("#imp").onclick = () => { const v = $("#inp").value, m = v.match(/sync=([\w-]+)/); if (importCode(m ? m[1] : v)) home(); };
+  $("#rst").onclick = e => { if (!e.target.dataset.a) { e.target.dataset.a = 1; e.target.textContent = "Tap again to confirm"; return; } ls.set("read", []); ls.set("star", []); hdr(); toast("Reset done"); home(); };
+}
+
+/* ----- offline ----- */
+if ("serviceWorker" in navigator && location.protocol.startsWith("http")) addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+</script>
+</body>
+</html>
